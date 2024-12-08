@@ -8,7 +8,7 @@
 #define CONCAT(a, b) a##b
 #define CONCAT2(a, b) CONCAT(a, b)
 #define PROFILE_BANDWIDTH(name, bytes) ProfileBlock CONCAT2(Block, __LINE__)(name, __COUNTER__ + 1, bytes)
-#define PROFILE_BLOCK(name)
+#define PROFILE_BLOCK(name) PROFILE_BANDWIDTH(name, 0)
 #define PROFILE_FUNCTION PROFILE_BLOCK(__FUNCTION__)
 #define PROFILE_FUNCTION_BANDWIDTH(bytes) PROFILE_BANDWIDTH(__FUNCTION__, bytes)
 
